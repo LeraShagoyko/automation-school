@@ -1,5 +1,3 @@
-package Task1_1;
-
 import java.util.Scanner;
 
 public class Mother {
