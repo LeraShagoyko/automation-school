@@ -1,5 +1,3 @@
-package Task1_3;
-
 import java.util.Scanner;
 
 public class Rhombus {

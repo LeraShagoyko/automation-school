@@ -1,5 +1,3 @@
-package Task1_4;
-
 import java.util.*;
 
 public class Marathon {
