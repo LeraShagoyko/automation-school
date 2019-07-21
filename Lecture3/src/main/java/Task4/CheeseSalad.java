@@ -1,3 +1,5 @@
+package Task4;
+
 public class CheeseSalad implements MySalad {
 
     @Override

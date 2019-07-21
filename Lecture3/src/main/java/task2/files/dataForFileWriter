@@ -1,0 +1,13 @@
+MySalad Name: Greek Total Calories: 80
+Ingredients:[task1.Cucumber Calories 10 Weight 70
+, task1.Tomato Calories 20 Weight 100
+, task1.Onion Calories 5 Weight 50
+]MySalad Name: Vegan Total Calories: 45
+Ingredients:[task1.Cucumber Calories 10 Weight 70
+, task1.Onion Calories 5 Weight 50
+]Filtered by calories [task1.Cucumber Calories 10 Weight 70
+, task1.Onion Calories 5 Weight 50
+]Sorted by calories [task1.Onion Calories 5 Weight 50
+, task1.Cucumber Calories 10 Weight 70
+, task1.Tomato Calories 20 Weight 100
+]
