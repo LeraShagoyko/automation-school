@@ -1,6 +1,8 @@
-import Exceptions.AmountException;
-import Exceptions.FilterException;
-import Exceptions.NameException;
+package task1;
+
+import task1.Exceptions.AmountException;
+import task1.Exceptions.FilterException;
+import task1.Exceptions.NameException;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -21,28 +23,28 @@ public class Helper {
             veganMyMySalad.addVegetable(4, new Cucumber());
             veganMyMySalad.addVegetable(1, new Onion());
 
-            writeToFile(greekMyMySalad.toString());
-            writeToFile(veganMyMySalad.toString());
-            writeToFile("Filtered by calories " + veganMyMySalad.getFilteredVegetablesByCalories(4, 15));
+            writeToFile(greekMyMySalad.toString(), "lecture3/src/main/java/task2/files/dataForFileWriter");
+            writeToFile(veganMyMySalad.toString(), "lecture3/src/main/java/task2/files/dataForFileWriter");
+            writeToFile("Filtered by calories " + veganMyMySalad.getFilteredVegetablesByCalories(4, 15), "lecture3/src/main/java/task2/files/dataForFileWriter");
 
             Collections.sort(greekMyMySalad.getVegetables(), new VegetablesCaloriesComparator());
-            writeToFile("Sorted by calories " + greekMyMySalad.getVegetables());
-            readFromFile("Lecture3/task2/files/dataForFileWriter");
+            writeToFile("Sorted by calories " + greekMyMySalad.getVegetables(), "lecture3/src/main/java/task2/files/dataForFileWriter");
+            readFromFile("lecture3/src/main/java/task2/files/dataForFileWriter");
         } catch (NameException | AmountException | FilterException exception) {
             System.out.println(exception.getMessage());
         }
 
     }
 
-    private static List<String> readFromFile(String pathToFile) {
+    public static List<String> readFromFile(String pathToFile) {
         List<String> listOfStrings = new ArrayList<>();
         try {
             BufferedReader bufferreader = new BufferedReader(new FileReader(pathToFile));
-            String line = bufferreader.readLine();
-            while (line != null) {
-                line = bufferreader.readLine();
+            String line;
+            while((line = bufferreader.readLine()) != null) {
                 listOfStrings.add(line);
             }
+            bufferreader.close();
         } catch (IOException ex) {
 
             System.out.println(ex.getMessage());
@@ -50,9 +52,9 @@ public class Helper {
         return listOfStrings;
     }
 
-    private static void writeToFile(String inputMessage) {
+    public static void writeToFile(String inputMessage, String fileName) {
 
-        try (FileWriter writer = new FileWriter("Lecture3/task2/files/dataForFileWriter", true)) {
+        try (FileWriter writer = new FileWriter(fileName, true)) {
             writer.write(inputMessage);
 
             writer.flush();
@@ -76,7 +78,7 @@ public class Helper {
 
 
     public static void processRegex() {
-        String input = readFromFile("Lecture3/task2/files/Restaurant.txt").toString();
+        String input = readFromFile("lecture3/src/main/java/task2/files/Restaurant.txt").toString();
         Pattern pattern = Pattern.compile("([A-Z]{1}[a-z]+\\sSalad)");
         Matcher neMatcher = pattern.matcher(input);
         while (neMatcher.find())

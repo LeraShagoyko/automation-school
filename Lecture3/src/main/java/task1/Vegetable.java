@@ -1,3 +1,5 @@
+package task1;
+
 public abstract class Vegetable {
     private int calories;
     private int weight;

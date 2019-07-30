@@ -1,3 +1,5 @@
+package Task4;
+
 public class VeganSalad implements MySalad {
     @Override
     public void eat() {

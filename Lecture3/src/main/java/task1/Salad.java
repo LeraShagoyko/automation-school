@@ -1,6 +1,8 @@
-import Exceptions.AmountException;
-import Exceptions.FilterException;
-import Exceptions.NameException;
+package task1;
+
+import task1.Exceptions.AmountException;
+import task1.Exceptions.FilterException;
+import task1.Exceptions.NameException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +12,7 @@ public class Salad {
     private ArrayList<Vegetable> vegetables = new ArrayList<>();
     private int totalCalories;
 
-    public Salad(String name) throws NameException{
+    public Salad(String name) throws NameException {
         if (name.equals("")) {
             throw new NameException("The name is absent");
         }
